@@ -1,0 +1,32 @@
+{% extends 'store\base.html' %}
+{% load static %}
+
+{% block maincarousal %}
+{% endblock %}
+
+{% block addcarousal %}
+{% endblock %}
+
+
+{% block content %}
+
+{% for i in pdata %}
+ <img src="{{i.product_image.url}}" alt="" style="height: 700px;">
+ {{i.name}}
+ {{i.category}}
+ {{i.quantity}}
+ {{i.original_price}}
+ {{i.selling_price}}
+ {{i.description}}
+ <a href="{% url 'order' i.id%} ">Buy now</a>
+ <a href="{% url 'cart' i.id%} ">Add to Cart</a>
+
+  <div class="input-group" style="width: 150px;">
+    <button class="input-group-text bg-success text-light" name="" id=""><i class="fa-solid fa-plus"></i> </button>
+    <input type="text" name="" id="" value="" class="form-select text-danger">
+    <button class="input-group-text bg-success text-light" name="" id=""><i class="fa-solid fa-minus"></i> </button>
+  </div>  
+{% endfor %}   
+
+
+{% endblock %}

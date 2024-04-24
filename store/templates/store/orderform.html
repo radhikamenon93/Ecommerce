@@ -1,0 +1,32 @@
+{%extends "store/base.html"%}
+{% block maincarousal %}
+{% endblock %}
+{% block content %}
+
+<div style="margin-top: 50%;margin-bottom: 10%;">
+     
+    <img src="{{data.product_image.url}}" alt="" style="height: 400px;">
+    <div class="mb-4">
+        name : {{data.name}}
+     </div>
+     <div class="mb-4">
+        Category : {{data.category}}
+     </div>
+     <div class="mb-4">
+        quantity : {{data.quantity}}
+     </div>
+     <div class="mb-4">
+        Selling Price : {{data.selling_price}}
+     </div>
+     
+     
+    
+    <form method="post">
+        {%csrf_token%}
+        {{form}}
+        <button type="submit">add</button>
+    </form> 
+
+</div>   
+{% endblock %}    
+
